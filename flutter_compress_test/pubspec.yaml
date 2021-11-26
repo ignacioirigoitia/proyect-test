@@ -35,6 +35,7 @@ dependencies:
   file_selector: ^0.8.2+1
   video_player: ^2.2.7
   fluro: ^2.0.3
+  chewie: ^1.2.2
   flutter:
     sdk: flutter
 

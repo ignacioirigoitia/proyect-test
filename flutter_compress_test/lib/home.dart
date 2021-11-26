@@ -136,7 +136,34 @@ class _HomeReactionsState extends State<HomeReactions> {
               SizedBox(height: 20),
               Text('Sección de Videos', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
               SizedBox(height: 20),
-              VideoSection()
+              if(!Platform.isIOS)
+                VideoSection(
+                  dataSourceCDN: 'https://cdn.globalrmm.online/Nature%20-%2031377-reducido%20youtube.mp4', 
+                  dataSourceFirstOption: 'https://cdn.globalrmm.online/Nature%20-%2031377-reducido%20youtube.mp4', 
+                  dataSourceSecondOption: 'https://cdn.globalrmm.online/Nature%20-%2031377-reducido%20youtube.mp4'
+                ),
+              SizedBox(height: 20),
+              if(!Platform.isIOS)
+                VideoSection(
+                  dataSourceCDN: 'https://cdn.globalrmm.online/02.mp4', 
+                  dataSourceFirstOption: 'https://socialzoe.nyc3.cdn.digitaloceanspaces.com/02.mp4', 
+                  dataSourceSecondOption: 'https://socialzoe.nyc3.digitaloceanspaces.com/02.mp4'
+                ),
+              SizedBox(height: 20),
+              if(!Platform.isIOS)
+                VideoSection(
+                  dataSourceCDN: 'https://cdn.globalrmm.online/03.mp4', 
+                  dataSourceFirstOption: 'https://socialzoe.nyc3.cdn.digitaloceanspaces.com/03.mp4', 
+                  dataSourceSecondOption: 'https://socialzoe.nyc3.digitaloceanspaces.com/03.mp4'
+                ),
+              SizedBox(height: 20),
+              if(!Platform.isIOS)
+                VideoSection(
+                  dataSourceCDN: 'https://cdn.globalrmm.online/01.mp4', 
+                  dataSourceFirstOption: 'https://socialzoe.nyc3.cdn.digitaloceanspaces.com/01.mp4', 
+                  dataSourceSecondOption: 'https://socialzoe.nyc3.digitaloceanspaces.com/01.mp4'
+                ),
+              SizedBox(height: 20),
             ] 
           ),
         ),

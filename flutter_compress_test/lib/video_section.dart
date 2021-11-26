@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 class VideoSection extends StatefulWidget {
-  const VideoSection({ Key? key }) : super(key: key);
+  const VideoSection({ 
+    Key? key, 
+    required this.dataSourceCDN, 
+    required this.dataSourceFirstOption, 
+    required this.dataSourceSecondOption 
+  }) : super(key: key);
+
+  final String dataSourceCDN;
+  final String dataSourceFirstOption;
+  final String dataSourceSecondOption;
 
   @override
   State<VideoSection> createState() => _VideoSectionState();
@@ -18,20 +27,17 @@ class _VideoSectionState extends State<VideoSection> {
 
   @override
   void initState() {
-    _controllerCDN = VideoPlayerController.network(
-        'https://cdn.globalrmm.online/Nature%20-%2031377-reducido%20youtube.mp4');
+    _controllerCDN = VideoPlayerController.network(this.widget.dataSourceCDN);
     _initializeVideoPlayerFutureCDN = _controllerCDN.initialize();
     _controllerCDN.setLooping(true);
     _controllerCDN.setVolume(1.0);
 
-    _controllerFirstOption = VideoPlayerController.network(
-        'https://cdn.globalrmm.online/Nature%20-%2031377-reducido%20youtube.mp4');
+    _controllerFirstOption = VideoPlayerController.network(this.widget.dataSourceFirstOption);
     _initializeVideoPlayerFutureFirstOption = _controllerFirstOption.initialize();
     _controllerFirstOption.setLooping(true);
     _controllerFirstOption.setVolume(1.0);
 
-    _controllerSecondOption = VideoPlayerController.network(
-        'https://cdn.globalrmm.online/Nature%20-%2031377-reducido%20youtube.mp4');
+    _controllerSecondOption = VideoPlayerController.network(this.widget.dataSourceSecondOption);
     _initializeVideoPlayerFutureSecondOption = _controllerSecondOption.initialize();
     _controllerSecondOption.setLooping(true);
     _controllerSecondOption.setVolume(1.0);
